@@ -1,12 +1,15 @@
 import sqlite3
 import flet as ft
 
+PADDING = 30
+TEXT_SIZE = 24
+
 def main(page: ft.Page):
     page.title = "NavigationBar Example"
 
     page.appbar = ft.AppBar(
-        leading=ft.Icon(ft.icons.PALLET),
-        title=ft.Text("AppBar Example"),
+        leading=ft.Icon(ft.icons.CALENDAR_TODAY),
+        title=ft.Text("Today"),
         bgcolor=ft.colors.SURFACE_VARIANT,
     )
 
@@ -26,6 +29,48 @@ def main(page: ft.Page):
                 label="Stats"),
         ]
     )
-    page.add(ft.Text("Body!"))
+
+    desayuno = ft.Card(content=ft.Container(
+        content=ft.Row([
+            ft.Icon(ft.icons.WB_TWILIGHT),
+            ft.Text("Breakfast", size=TEXT_SIZE),
+            ft.FloatingActionButton(icon=ft.icons.ADD)
+        ]),
+        padding=PADDING,
+    ))
+    almuerzo = ft.Card(content=ft.Container(
+        content=ft.Row([
+            ft.Icon(ft.icons.WB_SUNNY),
+            ft.Text("Launch", size=TEXT_SIZE),
+            ft.FloatingActionButton(icon=ft.icons.ADD)
+        ]),
+        padding=PADDING,
+    ))
+    cena = ft.Card(content=ft.Container(
+        content=ft.Row([
+            ft.Icon(ft.icons.BEDTIME),
+            ft.Text("Dinner", size=TEXT_SIZE),
+            ft.FloatingActionButton(icon=ft.icons.ADD)
+        ]),
+        padding=PADDING,
+    ))
+    otros = ft.Card(content=ft.Container(
+        content=ft.Row([
+            ft.Icon(ft.icons.RESTAURANT),
+            ft.Text("Snacks", size=TEXT_SIZE),
+            ft.FloatingActionButton(icon=ft.icons.ADD)
+        ]),
+        padding=PADDING,
+    ))
+
+    page.add(
+    ft.Column(controls=[
+        desayuno,
+        almuerzo,
+        cena,
+        otros,
+    ],
+    ))
+
 
 ft.app(target=main)
