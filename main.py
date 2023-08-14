@@ -30,7 +30,7 @@ def main(page: ft.Page):
         ]
     )
 
-    desayuno = ft.Card(content=ft.Container(
+    breakfast = ft.Card(content=ft.Container(
         content=ft.Row([
             ft.Icon(ft.icons.WB_TWILIGHT),
             ft.Text("Breakfast", size=TEXT_SIZE),
@@ -38,15 +38,15 @@ def main(page: ft.Page):
         ]),
         padding=PADDING,
     ))
-    almuerzo = ft.Card(content=ft.Container(
+    lunch = ft.Card(content=ft.Container(
         content=ft.Row([
             ft.Icon(ft.icons.WB_SUNNY),
-            ft.Text("Launch", size=TEXT_SIZE),
+            ft.Text("Lunch", size=TEXT_SIZE),
             ft.FloatingActionButton(icon=ft.icons.ADD)
         ]),
         padding=PADDING,
     ))
-    cena = ft.Card(content=ft.Container(
+    dinner = ft.Card(content=ft.Container(
         content=ft.Row([
             ft.Icon(ft.icons.BEDTIME),
             ft.Text("Dinner", size=TEXT_SIZE),
@@ -54,7 +54,7 @@ def main(page: ft.Page):
         ]),
         padding=PADDING,
     ))
-    otros = ft.Card(content=ft.Container(
+    snacks = ft.Card(content=ft.Container(
         content=ft.Row([
             ft.Icon(ft.icons.RESTAURANT),
             ft.Text("Snacks", size=TEXT_SIZE),
@@ -65,10 +65,10 @@ def main(page: ft.Page):
 
     page.add(
     ft.Column(controls=[
-        desayuno,
-        almuerzo,
-        cena,
-        otros,
+        breakfast,
+        lunch,
+        dinner,
+        snacks,
     ],
     ))
 
