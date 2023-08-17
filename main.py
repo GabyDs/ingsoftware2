@@ -6,6 +6,7 @@ TEXT_SIZE = 24
 
 def main(page: ft.Page):
     page.title = "NavigationBar Example"
+    page.scroll = True
 
     page.appbar = ft.AppBar(
         leading=ft.Icon(ft.icons.CALENDAR_TODAY),
